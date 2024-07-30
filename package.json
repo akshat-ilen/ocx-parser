@@ -1,0 +1,36 @@
+{
+  "name": "ocx-parser",
+  "version": "0.0.1-beta",
+  "description": "A parser for OCX (Open Cap Table) files",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/types/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "rimraf dist && npm run build:esm && npm run build:cjs && npm run build:types",
+    "build:esm": "tsc -p tsconfig.esm.json",
+    "build:cjs": "tsc -p tsconfig.cjs.json",
+    "build:types": "tsc -p tsconfig.types.json",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "ocx",
+    "parser",
+    "cap table"
+  ],
+  "author": "Akshat Jain",
+  "license": "MIT",
+  "dependencies": {
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "typescript": "^4.5.0",
+    "rimraf": "^3.0.2",
+    "@types/node": "^16.0.0"
+  },
+  "peerDependencies": {
+    "xlsx": "^0.18.5"
+  }
+}
